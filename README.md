@@ -1,23 +1,21 @@
-tutum-centos
+basic-centos
 ============
 
 Simple CentOS docker image with SSH access
 
-
 Usage
 -----
 
-To create the image `tutum/centos`, execute the following commands on the tutum-centos folder:
+To create the image `pread/basic-centos`, execute the following commands on the basic-centos folder:
 
-	docker build -t tutum/centos:6.4 6.4/
+	docker build -t pread/basic-centos:6.4 6.4/
 
-
-Running tutum/centos
+Running pread/basic-centos
 --------------------
 
 Run a container from the image you created earlier binding it to port 2222 in all interfaces:
 
-	sudo docker run -d -p 0.0.0.0:2222:22 tutum/centos:6.4
+	sudo docker run -d -p 0.0.0.0:2222:22 pread/basic-centos:6.4
 
 The first time that you run your container, a random password will be generated
 for user `root`. To get the password, check the logs of the container by running:
@@ -46,5 +44,4 @@ Setting a specific password for the root account
 If you want to use a preset password instead of a random generated one, you can
 set the environment variable `ROOT_PASS` to your specific password when running the container:
 
-	docker run -d -p 0.0.0.0:2222:22 -e ROOT_PASS="mypass" tutum/centos:6.4
-
+	docker run -d -p 0.0.0.0:2222:22 -e ROOT_PASS="mypass" pread/basic-centos:6.4
