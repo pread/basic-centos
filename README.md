@@ -15,7 +15,7 @@ Running pread/basic-centos
 
 Run a container from the image you created earlier binding it to port 2222 in all interfaces:
 
-	sudo docker run -d -p 0.0.0.0:2222:22 pread/basic-centos:6.4
+	sudo docker run --tty -d -p 0.0.0.0:2222:22 pread/basic-centos:6.4
 
 The first time that you run your container, a random password will be generated
 for user `root`. To get the password, check the logs of the container by running:
