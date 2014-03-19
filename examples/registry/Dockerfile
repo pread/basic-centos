@@ -48,8 +48,8 @@ RUN mkdir /tmp/registry
 RUN chmod 777 /tmp/registry
 
 # Let’s start the registry
-cd /var/opt/docker-registry
-gunicorn --access-logfile - --log-level debug --debug \
+RUN cd /var/opt/docker-registry
+RUN gunicorn --access-logfile - --log-level debug --debug \
  -b 0.0.0.0:8000 -c config/gunicorn_config.py \
  -w 1 wsgi:application
  
