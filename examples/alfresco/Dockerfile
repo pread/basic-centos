@@ -38,6 +38,21 @@ RUN echo 'alfresco ALL=(ALL)       ALL'  >> /etc/sudoers
 # Install Man pages
 RUN yum -y install man
 
+# Install Postgres client 9.3.3
+RUN wget http://yum.postgresql.org/9.3/redhat/rhel-6-x86_64/postgresql93-libs-9.3.3-1PGDG.rhel6.x86_64.rpm
+RUN wget http://yum.postgresql.org/9.3/redhat/rhel-6-x86_64/postgresql93-9.3.3-1PGDG.rhel6.x86_64.rpm
+RUN rpm -ivh postgresql93-libs-9.3.3-1PGDG.rhel6.x86_64.rpm
+RUN rpm -ivh postgresql93-9.3.3-1PGDG.rhel6.x86_64.rpm
+
+# Install Alfresco 
+#RUN wget <alfresco>
+#RUN rpm -ivh <alfresco>
+#RUN chkconfig alfresco on
+
+# Install Alfresco Workdesk
+#RUN wget <alfresco workdesk>
+#RUN rpm -ivh <alfresco workdesk>
+
 # install Java 7 SDK from AWS S3
 RUN wget http://s3-eu-west-1.amazonaws.com/devops-001/rpms/jdk-7u51-linux-x64.rpm
 RUN rpm -Uvh jdk-7u51-linux-x64.rpm
